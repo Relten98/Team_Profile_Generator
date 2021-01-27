@@ -5,6 +5,15 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+const employees = []
+
+function addEmployee() {
+    inquirer.prompt([{
+        message: "Enter team member's name",
+        name: "name"
+    },
+}
+
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
