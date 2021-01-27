@@ -7,12 +7,6 @@ const fs = require("fs");
 
 const employees = []
 
-function addEmployee() {
-    inquirer.prompt([{
-        message: "Enter team member's name",
-        name: "name"
-    },
-}
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -20,10 +14,31 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 
 //// Meat and potatos MMMMMmmmm. Meaty....
+function addEmployee() {
+    inquirer.prompt([{
+        message: "Enter the employee's name",
+        name: "name"
+    },
+    {
+        type: "list",
+        message: "Select the employee's role",
+        choices: [
+            "Engineer",
+            "Intern",
+            "Manager"
+        ],
+        name: "role"
+    },
+    {
+        message: "Enter  the employee's id",
+        name: "id"
+    },
+    {
+        message: "Enter the employee's email",
+        name: "email"
+    },
+}]);
 
-let inputquestions {
-
-}
 
 
 // Write code to use inquirer to gather information about the development team members,
