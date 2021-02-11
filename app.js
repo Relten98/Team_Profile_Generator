@@ -24,7 +24,6 @@ function addEmployee() {
         message: "Enter the employee's name",
         name: "name"
     },
-
     {
         type: "list",
         message: "Select the employee's role",
@@ -48,7 +47,33 @@ function addEmployee() {
     },
 
 }])
-  
+
+.then(function({name, role, id, email}) {
+    let roleInfo = "";
+    if (role === "Engineer") {
+        roleInfo = "GitHub username";
+    } else if (role === intern) {
+        roleInfo === "school name";
+    } else {
+        roleInfo = "office phone number";
+    }
+    inquirer.prompt([{
+        message: `Enter team member's ${roleInfo}`,
+        name: "roleInfo"
+    },
+    {
+        type: "list",
+        message: "Would you like to add more team members?",
+        choices: [
+            "Yes",
+            "No"
+        ],
+        name: "moreMembers"
+    }])
+
+
+
+    initApp();
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
   
